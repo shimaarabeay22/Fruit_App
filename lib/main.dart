@@ -2,11 +2,13 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruit_app/core/heper_funcctions.dart';
+import 'package:fruit_app/core/services/shared_preferences/shared_preferences_singleton.dart';
 import 'features/splash/presentation/views/splash_view.dart';
 import 'generated/l10n.dart';
 
 
-void main() {
+void main()async {
+  await SharedPreferencesSingleton.init();
   runApp(
     DevicePreview(
       enabled: true,
@@ -21,6 +23,7 @@ class FruitApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

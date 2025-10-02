@@ -2,7 +2,10 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_app/core/utils/app_colors.dart';
 
+import '../../../../../core/constant.dart';
+import '../../../../../core/services/shared_preferences/shared_preferences_singleton.dart';
 import '../../../../../core/widgets/custom_button.dart';
+import '../../../../auth/presentation/views/login_view.dart';
 import 'on_boarding_page_view.dart';
 
 class OnBoardingBody extends StatefulWidget {
@@ -37,7 +40,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
     return Scaffold(
         body: Column(
       children: [
-        OnBoardingPageView(pageController: pageController,),
+        OnBoardingPageView(pageController: pageController),
         DotsIndicator(
             dotsCount: 2,
             decorator: DotsDecorator(
@@ -58,7 +61,10 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                SharedPreferencesSingleton.setBool(isOnboardingView, true);
+                Navigator.of(context).pushReplacementNamed(LoginView.routeName);
+              },
               text: 'ابدأ الا',
             ),
           ),

@@ -40,8 +40,9 @@ final PageController pageController;
             ),
             subTitle:
                 'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
-            isVisible: (pageController.hasClients?pageController.page!.round():0)==0?true:false,
-          ),
+            isVisible: true),
+                //(pageController.hasClients?pageController.page!.round():0)==0?true:false,)
+
           PageViewItem(
             image: Assets.images.pageViewItem2Image,
             backgroundImage: Assets.images.pageViewItem2BackgroundImage,
@@ -58,7 +59,8 @@ final PageController pageController;
             ),
             subTitle:
                 'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
-            isVisible:(pageController.hasClients?pageController.page!.round():0)!=0? false: true
+            isVisible:false
+                //(pageController.hasClients?pageController.page!.round():0)!=0? false: true
           ),
         ],
     ));
