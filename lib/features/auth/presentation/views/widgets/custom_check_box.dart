@@ -21,7 +21,8 @@ class CustomCheckBox extends StatelessWidget {
         height: 24,
         duration: const Duration(milliseconds: 100),
         decoration: ShapeDecoration(
-          color: isChecked ? AppColors.primaryColor : Colors.white,
+          color: isChecked ? AppColors.primaryColor
+              : Colors.white,
           shape: RoundedRectangleBorder(
             side: BorderSide(
               width: 1.50,
